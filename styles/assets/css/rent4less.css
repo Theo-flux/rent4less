@@ -1,0 +1,52 @@
+:root {
+    --color-flamingo: #ED6638;
+    --color-mantis: #6AB950;
+    --color-white: #ffffff;
+    --color-gray: #F8F6F6;
+    --color-darkgray: #A6A6A6;
+    --colorblack: #424242;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* axi Font */
+@font-face {
+    font-family: axi;
+    font-weight: 800;
+    src: url("../fonts/axiforma/Axiforma-Black.otf");
+}
+
+/* quinta Font */
+@font-face {
+    font-family: quinta;
+    font-weight: 300;
+    src: url("../fonts/quinta/BwQuintaPro-Light.otf");
+}
+
+@font-face {
+    font-family: quinta;
+    font-weight: 400;
+    src: url("../fonts/quinta/BwQuintaPro-Regular.otf");
+}
+
+@font-face {
+    font-family: quinta;
+    font-weight: 500;
+    src: url("../fonts/quinta/BwQuintaPro-Medium.otf");
+}
+
+@font-face {
+    font-family: quinta;
+    font-weight: 600;
+    src: url("../fonts/quinta/BwQuintaPro-Bold.otf");
+}
+
+@font-face {
+    font-family: quinta;
+    font-weight: 700;
+    src: url("../fonts/quinta/BwQuintaPro-Black.otf");
+}
