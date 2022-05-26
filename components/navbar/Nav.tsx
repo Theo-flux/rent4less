@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image'
 import { Section, Nav, Button } from '../../shared'
 import logo from '../../public/rent4less-logo.png'
-import { useMediaQuery } from 'react-responsive';
 
 type THamburgerProps = {
     handler: () => void;
@@ -115,7 +114,6 @@ const Hamburger = ({toggler, handler}: THamburgerProps) => {
 }
 
 function Navbar() {
-    const isMobile = useMediaQuery({maxWidth: 767});
     const [toggleClass, setToggleClass] = useState(false);
 
     function handleClassToggle(){
