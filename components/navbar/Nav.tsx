@@ -105,7 +105,7 @@ const NavMobile = ({toggler}: TNavMobileProps) => {
 
 const Hamburger = ({toggler, handler}: THamburgerProps) => {
     return(
-        <button onClick={() => handler()} id="navMenu" className={`${toggler ? "active" : ""} md:hidden`}>
+        <button onClick={() => handler()} id="navMenu" className={`outline-0 ${toggler ? "active" : ""} md:hidden`}>
             <span></span>
             <span></span>
             <span></span>
