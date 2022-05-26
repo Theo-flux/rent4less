@@ -3,6 +3,7 @@ import React from "react";
 type TGeneralProps = {
     children: React.ReactNode;
     className?: string;
+    style?: React.CSSProperties;
 };
 
 type TButtonProps = {
@@ -12,9 +13,9 @@ type TButtonProps = {
     onClick?: () => void;
 };
 
-export const Section = ({ children, className}: TGeneralProps) => {
+export const Section = ({ children, className, style}: TGeneralProps) => {
     return(
-        <section className={` ${className}`}>
+        <section style={style} className={` ${className}`}>
             {children}
         </section>
     )
@@ -22,7 +23,7 @@ export const Section = ({ children, className}: TGeneralProps) => {
 
 export const Div = ({ children, className }: TGeneralProps) => {
     return(
-        <div className={`w-11/12 mx-auto max-w-5xl ${className}`}>
+        <div className={`w-11/12 mx-auto max-w-6xl ${className}`}>
             {children}
         </div>
     )
@@ -42,7 +43,7 @@ export const Button = ({text, className, onClick, variant}: TButtonProps) => {
             onClick={onClick} 
             className={`
                 px-4 py-2 transition-all duration-500 ease-in-out
-                font-quinta font-bold text-xs uppercase
+                font-quinta text-xs uppercase
                 ${
                     variant === "borderd" &&
                         `bg-transparent outline outline-flamingo text-flamingo

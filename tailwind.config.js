@@ -18,6 +18,7 @@ module.exports = {
       gray: "var(--color-gray)",
       darkgray: "var(--color-darkgray)",
       black: "var(--colorblack)",
+      russian: "var(--color-russian)",
     },
     fontFamily: {
       quinta: ['quinta', defaultTheme.fontFamily.sans],

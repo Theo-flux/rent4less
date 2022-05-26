@@ -121,7 +121,7 @@ function Navbar() {
     }
 
     return (
-        <Section>
+        <Section className={`fixed w-full bg-white`}>
             <Nav>
                 <div className={`py-4 flex justify-between items-center`}>
                     <figure className={`w-fit`}>
