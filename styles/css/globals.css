@@ -20,14 +20,14 @@ html {
 /* styling nav-menu */
 #navMenu>span {
     display: block;
-    width: 25px;
+    width: 28px;
     height: 2px;
     border-radius: 99999px;
     background-color: #424242;
 }
 
 #navMenu>span:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 #navMenu,
@@ -51,7 +51,7 @@ html {
 }
 
 #navMenu.active>span:nth-child(1) {
-    transform: translateY(5px)
+    transform: translateY(9px)
 }
 
 #navMenu.active>span:nth-child(3) {
