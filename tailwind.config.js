@@ -15,6 +15,9 @@ module.exports = {
       white: "var(--color-white)",
       flamingo: "var(--color-flamingo)",
       mantis: "var(--color-mantis)",
+      gray: "var(--color-gray)",
+      darkgray: "var(--color-darkgray)",
+      black: "var(--colorblack)",
     },
     fontFamily: {
       quinta: ['quinta', defaultTheme.fontFamily.sans],

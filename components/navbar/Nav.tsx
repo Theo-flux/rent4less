@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Section, Nav } from '../../shared'
+import { Section, Nav, Button } from '../../shared'
 import logo from '../../public/rent4less-logo.png'
 
 const navItems = [
@@ -26,18 +26,22 @@ const navItems = [
         name: "Landlord",
         isDropdown: false,
     } 
-]
+];
 
 const NavDesktop = () => {
     return(
         <>
-            <div className={`w-[400px] flex justify-between items-center`}>
+            <div className={`hidden md:w-[250px] xl:w-[350px] md:flex justify-between items-center`}>
                 {
                     navItems.map((el, index) => {
                         return(
                             <span 
                                 key={index}
-                                className={``}
+                                className={`
+                                    text-sm cursor-pointer text-darkgray
+                                    hover:text-flamingo transition-all 
+                                    duration-500 ease-in-out
+                                `}
                             >
                                 {el.name}
                             </span>
@@ -46,9 +50,9 @@ const NavDesktop = () => {
                 }
             </div>
 
-            <div>
-                <button className={``}>LOGIN</button>
-                <button className={``}>REGISTER</button>
+            <div className={`hidden md:block`}>
+                <Button className={`mr-2`} variant={`unfilled`} text={`login`} />
+                <Button variant={`filled`} text={`register`} />
             </div>
         </>
     )
@@ -62,8 +66,8 @@ function Navbar() {
                 <figure className={`w-fit`}>
                     <Image src={logo} className={`w-[50%] border`} alt="logo" />
                 </figure>
-
-                <NavDesktop/>
+                
+                <NavDesktop />
             </div>
         </Nav>
     </Section>

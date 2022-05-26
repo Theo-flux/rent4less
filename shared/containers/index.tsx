@@ -7,8 +7,9 @@ type TGeneralProps = {
 
 type TButtonProps = {
     text: string;
+    variant: string;
     className?: string;
-    handler?: (event: React.MouseEvent<HTMLButtonElement>) => void
+    onClick?: () => void;
 };
 
 export const Section = ({ children, className}: TGeneralProps) => {
@@ -35,9 +36,35 @@ export const Nav = ({ children, className }: TGeneralProps) => {
     )
 };
 
-export const Button = ({text, className}: TButtonProps) => {
+export const Button = ({text, className, onClick, variant}: TButtonProps) => {
     return(
-        <button className={`${className}`}>
+        <button
+            onClick={onClick} 
+            className={`
+                px-4 py-2 transition-all duration-500 ease-in-out
+                font-quinta font-medium text-xs uppercase
+                ${
+                    variant === "borderd" &&
+                        `bg-transparent outline outline-flamingo text-flamingo
+                         hover:bg-flamingo hover:text-white
+                        `
+                }
+                ${
+                    variant === "filled" &&
+                        `bg-flamingo text-white
+                         hover:bg-transparent hover:text-flamingo
+                        `
+                }
+                ${
+                    variant === "unfilled" &&
+                        `bg-transparent text-flamingo 
+                        hover:ring-1 hover:ring-flamingo
+                        hover:ring-offset-0
+                        `
+                }
+                ${className}
+            `}
+            >
             {text}
         </button>
     )
