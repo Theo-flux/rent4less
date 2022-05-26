@@ -42,7 +42,7 @@ export const Button = ({text, className, onClick, variant}: TButtonProps) => {
             onClick={onClick} 
             className={`
                 px-4 py-2 transition-all duration-500 ease-in-out
-                font-quinta font-medium text-xs uppercase
+                font-quinta font-bold text-xs uppercase
                 ${
                     variant === "borderd" &&
                         `bg-transparent outline outline-flamingo text-flamingo

@@ -12,6 +12,56 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+/* styling nav-menu */
+#navMenu>span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    border-radius: 99999px;
+    background-color: #424242;
+}
+
+#navMenu>span:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+#navMenu,
+#navMenu>span {
+    transition: all .4s ease-in-out;
+}
+
+/* Adding Class Active */
+#navMenu.active {
+    transition-delay: 0.8s;
+    transform: rotate(45deg);
+}
+
+#navMenu.active>span:nth-child(2) {
+    width: 0;
+}
+
+#navMenu.active>span:nth-child(1),
+#navMenu.active>span:nth-child(3) {
+    transition-delay: .4s;
+}
+
+#navMenu.active>span:nth-child(1) {
+    transform: translateY(5px)
+}
+
+#navMenu.active>span:nth-child(3) {
+    transform: translateY(-9px) rotate(90deg);
+}
+
+/* .glassMorphism {
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+} */
 
 /* axi Font */
 @font-face {

@@ -1,6 +1,17 @@
+import { useState } from 'react';
 import Image from 'next/image'
 import { Section, Nav, Button } from '../../shared'
 import logo from '../../public/rent4less-logo.png'
+import { useMediaQuery } from 'react-responsive';
+
+type THamburgerProps = {
+    handler: () => void;
+    toggler: boolean;
+}
+
+type TNavMobileProps = {
+    toggler: boolean;
+}
 
 const navItems = [
     {
@@ -58,20 +69,79 @@ const NavDesktop = () => {
     )
 }
 
-function Navbar() {
-  return (
-    <Section>
-        <Nav>
-            <div className={`py-4 flex justify-between items-center`}>
-                <figure className={`w-fit`}>
-                    <Image src={logo} className={`w-[50%] border`} alt="logo" />
-                </figure>
+const NavMobile = ({toggler}: TNavMobileProps) => {
+    return(
+        <div 
+            className={`
+                ${toggler ? "-translate-y-6 opacity-100" : "opacity-0 translate-y-0" }
+                absolute z-50 w-full h-[100vh] left-0 top-[80px]
+                transition-all duration-500 ease-in-out
+                md:hidden
+            `}
+        >
+            <div className={`p-4 h-[100%] flex flex-col justify-start items-center`}>
+                {
+                    navItems.map((el, index) => {
+                        return(
+                            <span 
+                                key={index}
+                                className={`
+                                    text-sm cursor-pointer text-darkgray
+                                    hover:text-flamingo transition-all 
+                                    duration-500 ease-in-out mb-8
+                                `}
+                            >
+                                {el.name}
+                            </span>
+                        )
+                    })
+                }
                 
-                <NavDesktop />
+                <Button className={`mb-4`} variant={`unfilled`} text={`login`} />
+                <Button variant={`filled`} text={`register`} />
             </div>
-        </Nav>
-    </Section>
-  )
+        </div>
+    )
+}
+
+const Hamburger = ({toggler, handler}: THamburgerProps) => {
+    return(
+        <button onClick={() => handler()} id="navMenu" className={`${toggler ? "active" : ""} md:hidden`}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    )
+}
+
+function Navbar() {
+    const isMobile = useMediaQuery({maxWidth: 767});
+    const [toggleClass, setToggleClass] = useState(false);
+
+    function handleClassToggle(){
+        setToggleClass(!toggleClass);
+    }
+
+    return (
+        <Section>
+            <Nav>
+                <div className={`py-4 flex justify-between items-center`}>
+                    <figure className={`w-fit`}>
+                        <Image src={logo} className={`w-[20px] md:w-[50%] border`} alt="logo" />
+                    </figure>
+                            
+                    {/* <button onClick={() => handleClassToggle()} id="navMenu" className={`${toggleClass ? "active" : ""} md:hidden`}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button> */}
+                    <Hamburger toggler={toggleClass} handler={handleClassToggle} />
+                    <NavMobile toggler={toggleClass}/>
+                    <NavDesktop/>
+                </div>
+            </Nav>
+        </Section>
+    )
 }
 
 export default Navbar;
