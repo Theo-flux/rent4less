@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Navbar, Hero } from '../components';
+import { Navbar, Hero, Steps } from '../components';
 import { sanityClient } from "../sanity";
 import {TJumbotron} from "../types/typings";
 
@@ -16,9 +16,11 @@ const Home = ({ jumbotron }: IHomeProps) => {
         <title>Rent4less</title>
         <meta name="description" content="rent4less website" />
         <link rel="icon" href="/favicon.png" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet"></link>
       </Head>
       <Navbar />
       <Hero jumbotron={jumbotron}/>
+      <Steps />
     </div>
   )
 }

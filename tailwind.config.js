@@ -22,7 +22,8 @@ module.exports = {
     },
     fontFamily: {
       quinta: ['quinta', defaultTheme.fontFamily.sans],
-      axi: ['axi', defaultTheme.fontFamily.snas]
+      axi: ['axi', defaultTheme.fontFamily.sans],
+      poppins: ['poppins', defaultTheme.fontFamily.sans]
     },
     extend: {},
   },

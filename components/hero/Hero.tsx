@@ -24,16 +24,16 @@ function Hero({jumbotron}: IHeroProps) {
                 backgroundSize: ``,
             }}
         >
-            <Div>
-                <div className={`h-[100vh] flex flex-col justify-center items-start`}>
+            <div className={`w-4/5 mx-auto max-w-5xl`}>
+                <div className={`h-[80vh] lg:h-[100vh] flex flex-col justify-center items-start`}>
                         <Tag className={`mb-2`} text={jumbotron[0].tag}/>
-                        <div className={`w-[550px] h-fit mb-8`}>
+                        <div className={`max-w-[600px] h-fit mb-4`}>
                             <Title className={``} text={jumbotron[0].title} />
-                            <div className={`w-[288px] h-[15px] bg-flamingo rounded-full`}></div>
+                            <div className={`w-[150px] h-[10px] lg:w-[288px] lg:h-[15px] bg-flamingo rounded-full`}></div>
                         </div>
                         <Description className={`max-w-[400px]`} text={jumbotron[0].description} />
                 </div>
-            </Div>
+            </div>
         </Section>
     )
 }

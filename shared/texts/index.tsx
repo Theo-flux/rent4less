@@ -7,8 +7,8 @@ export const Title = ({text, className}: TTitleProps) => {
     return(
         <h1
             className={`
-                text-5xl font-axi font-bold
-                text-russian
+                text-xl md:text-4xl lg:text-5xl 
+                font-axi text-russian
                 ${className}
             `}
         >
@@ -17,11 +17,25 @@ export const Title = ({text, className}: TTitleProps) => {
     )
 }
 
+export const H2 = ({text, className}: TTitleProps) => {
+    return(
+        <h2
+            className={`
+               text-2xl md:text-3xl lg:text-4xl 
+                text-russian font-axi font-bold
+                ${className}
+            `}
+        >
+            {text}
+        </h2>
+    )
+}
+
 export const Tag = ({text, className}: TTitleProps) => {
     return(
         <h1
             className={`
-                text-xs font-axi
+                text-xs font-quinta font-medium
                 text-flamingo uppercase
                 ${className}
             `}
@@ -35,8 +49,8 @@ export const Description = ({text, className}: TTitleProps) => {
     return(
         <h1
             className={`
-                text-md font-axi
-                text-darkgray
+                text-xs md:text-md font-quinta
+                text-darkgray font-light tracking-wider
                 ${className}
             `}
         >

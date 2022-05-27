@@ -18,6 +18,26 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #FFFBFA;
+}
+
+.stroked-text-01 {
+    text-shadow:
+        -2px -2px 0 #ffffff,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff;
+}
+
+.stroked-text {
+    text-shadow:
+        -2px -2px 0 #ED6638,
+        2px -2px 0 #ED6638,
+        -2px 2px 0 #ED6638,
+        2px 2px 0 #ED6638;
+}
+
 /* styling nav-menu */
 #navMenu>span {
     display: block;
@@ -59,16 +79,22 @@ html {
     transform: translateY(-9px) rotate(90deg);
 }
 
-/* .glassMorphism {
+.glassMorphism {
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
     filter: blur(10px);
-} */
+}
 
 /* axi Font */
 @font-face {
     font-family: axi;
     font-weight: 800;
     src: url("../fonts/axiforma/Axiforma-Black.otf");
+}
+
+@font-face {
+    font-family: poppins;
+    font-weight: 800;
+    src: url("../fonts/poppins/Poppins-Black.otf");
 }
 
 /* quinta Font */

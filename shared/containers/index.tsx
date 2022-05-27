@@ -23,7 +23,7 @@ export const Section = ({ children, className, style}: TGeneralProps) => {
 
 export const Div = ({ children, className }: TGeneralProps) => {
     return(
-        <div className={`w-11/12 mx-auto max-w-6xl ${className}`}>
+        <div className={`w-4/5 py-24 mx-auto max-w-6xl ${className}`}>
             {children}
         </div>
     )
@@ -31,7 +31,7 @@ export const Div = ({ children, className }: TGeneralProps) => {
 
 export const Nav = ({ children, className }: TGeneralProps) => {
     return(
-        <nav className={`w-11/12 mx-auto max-w-6xl ${className}`}>
+        <nav className={`w-4/5 mx-auto max-w-6xl ${className}`}>
             {children}
         </nav>
     )

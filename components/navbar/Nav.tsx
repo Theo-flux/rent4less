@@ -10,6 +10,7 @@ type THamburgerProps = {
 
 type TNavMobileProps = {
     toggler: boolean;
+    className?: string;
 }
 
 const navItems = [
@@ -68,12 +69,12 @@ const NavDesktop = () => {
     )
 }
 
-const NavMobile = ({toggler}: TNavMobileProps) => {
+const NavMobile = ({toggler, className}: TNavMobileProps) => {
     return(
         <div 
-            className={`
+            className={`${className}
                 ${toggler ? "-translate-y-6 opacity-100" : "opacity-0 translate-y-0" }
-                absolute z-50 w-full h-[100vh] left-0 top-[80px]
+                absolute z-50 w-full h-[100vh] left-0 top-[100px]
                 transition-all duration-500 ease-in-out
                 md:hidden
             `}
@@ -121,20 +122,15 @@ function Navbar() {
     }
 
     return (
-        <Section className={`fixed w-full bg-white`}>
+        <Section className={`fixed z-50 w-full backdrop-filter backdrop-blur-lg bg-opacity-30`}>
             <Nav>
                 <div className={`py-4 flex justify-between items-center`}>
                     <figure className={`w-fit`}>
                         <Image src={logo} className={`w-[20px] md:w-[50%] border`} alt="logo" />
                     </figure>
-                            
-                    {/* <button onClick={() => handleClassToggle()} id="navMenu" className={`${toggleClass ? "active" : ""} md:hidden`}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button> */}
+            
                     <Hamburger toggler={toggleClass} handler={handleClassToggle} />
-                    <NavMobile toggler={toggleClass}/>
+                    <NavMobile className={`backdrop-filter backdrop-blur-lg bg-opacity-30 z-50 bg-white`} toggler={toggleClass}/>
                     <NavDesktop/>
                 </div>
             </Nav>
