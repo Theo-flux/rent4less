@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Navbar, Hero, Steps } from '../components';
+import { Navbar, Hero, Steps, Footer } from '../components';
 import { sanityClient } from "../sanity";
 import {TJumbotron} from "../types/typings";
 
@@ -21,6 +21,7 @@ const Home = ({ jumbotron }: IHomeProps) => {
       <Navbar />
       <Hero jumbotron={jumbotron}/>
       <Steps />
+      <Footer />
     </div>
   )
 }
