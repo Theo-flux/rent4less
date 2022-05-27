@@ -25,7 +25,7 @@ function Hero({jumbotron}: IHeroProps) {
             }}
         >
             <div className={`w-4/5 mx-auto max-w-5xl`}>
-                <div className={`h-[80vh] lg:h-[100vh] flex flex-col justify-center items-start`}>
+                <div className={`h-[60vh] lg:h-[100vh] flex flex-col justify-center items-start`}>
                         <Tag className={`mb-2`} text={jumbotron[0].tag}/>
                         <div className={`max-w-[600px] h-fit mb-4`}>
                             <Title className={``} text={jumbotron[0].title} />
