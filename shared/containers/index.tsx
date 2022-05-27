@@ -15,7 +15,7 @@ type TButtonProps = {
 
 export const Section = ({ children, className, style}: TGeneralProps) => {
     return(
-        <section style={style} className={` ${className}`}>
+        <section style={style || {}} className={` ${className}`}>
             {children}
         </section>
     )

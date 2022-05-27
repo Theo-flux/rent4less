@@ -4,24 +4,23 @@ import {TJumbotron} from "../../types/typings";
 import {Section, Div, Title, Tag, Description} from "../../shared";
 import bg from "../../public/background.png";
 
-interface IHeroProps {
+type THeroProps = {
     jumbotron: [TJumbotron]
 }
 
 
 
-function Hero({jumbotron}: IHeroProps) {
+function Hero({jumbotron}: THeroProps) {
     const isMobile = useMediaQuery({minWidth: 767});
     return (
         <Section
             className={``}
             style = {{
-                backgroundImage: `url(${isMobile && bg.src})`,
+                // background: `url(${isMobile && bg.src})`,
                 width: '100%',
                 height: '100%',
                 backgroundPosition: `center`,
                 backgroundRepeat: `no-repeat`,
-                backgroundSize: ``,
             }}
         >
             <div className={`w-4/5 mx-auto max-w-5xl`}>
