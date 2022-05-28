@@ -49,7 +49,7 @@ function Download({download}: IDownloadProps) {
                                 <H2 textColor={`text-white`} className={`mt-4 text-white text-center md:text-left`} text={download[0].title} />
                             </div>
                             
-                            <div className={`w-full md:w-[400px] lg:w-fit flex flex-row justify-between md:items-center`}>
+                            <div className={`w-[250px] md:w-[400px] lg:w-fit flex flex-row justify-between md:items-center`}>
                                 {
                                     downloadData.map((data, index) => {
                                         return(
