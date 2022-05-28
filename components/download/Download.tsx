@@ -31,11 +31,9 @@ function Download({download}: IDownloadProps) {
         <Section style={{background: `linear-gradient(90deg, rgba(255, 237, 231, 0) 0%, #FFEDE7 100%)`}}>
             <div className={`w-11/12 py-24 mx-auto max-w-6xl`}>
                 <div 
-                    className={`w-full mx-auto rounded-lg`} 
+                    className={`w-full mx-auto rounded-lg h-[200px] md:h-[300px]`} 
                     style={{
                         backgroundImage: `url('${urlFor(download[0].image.asset._ref).url()}')`,
-                        width: '100%',
-                        height: '300px',
                         backgroundPosition: `cover`,
                         backgroundRepeat: `no-repeat`,
                         backgroundBlendMode: `overlay`,
@@ -51,15 +49,15 @@ function Download({download}: IDownloadProps) {
                                 <H2 textColor={`text-white`} className={`mt-4 text-white text-center md:text-left`} text={download[0].title} />
                             </div>
                             
-                            <div className={`w-fit flex flex-col md:flex-row justify-between md:items-center`}>
+                            <div className={`w-full md:w-[400px] lg:w-fit flex flex-row justify-between md:items-center`}>
                                 {
                                     downloadData.map((data, index) => {
                                         return(
-                                            <div key={index} className={`rounded-md flex justify-between items-center bg-white px-4 py-1 first:mb-4 md:first:mr-4 md:first:mb-0`}>
-                                                <Image src={data.icon} alt="google"/>
-                                                <span className={`font-quinta md:ml-4`}>
+                                            <div key={index} className={`rounded-md flex justify-between items-center bg-white px-2 md:px-4 py-2 md:first:mr-4 md:first:mb-0`}>
+                                                <Image src={data.icon} className={`w-[100%]`} alt="google"/>
+                                                <span className={`font-quinta ml-2 md:ml-4 flex flex-col justify-center`}>
                                                     <small className={`text-[8px] md:text-[10px]`}>GET IT ON</small>
-                                                    <p className={`font-bold text-sm md:text-base`}>{data.name}</p>
+                                                    <p className={`font-bold text-xs md:text-base`}>{data.name}</p>
                                                 </span>
                                             </div>
                                         )
