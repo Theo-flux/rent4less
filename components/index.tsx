@@ -4,3 +4,4 @@ export { default as Steps } from "./steps/Steps";
 export { default as Footer } from "./footer/Footer";
 export { default as Statistics } from "./stats/Statistics";
 export { default as Aboutus } from "./about/Aboutus";
+export { default as Download } from "./download/Download";

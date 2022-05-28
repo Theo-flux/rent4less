@@ -1,16 +1,17 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Navbar, Hero, Steps, Footer, Aboutus } from '../components';
+import { Navbar, Hero, Steps, Footer, Aboutus, Download } from '../components';
 import { sanityClient } from "../sanity";
-import {TJumbotron, TAbout} from "../types/typings";
+import {TJumbotron, TAbout, TDownload} from "../types/typings";
 
 interface IHomeProps {
-    jumbotron: [TJumbotron];
     about: [TAbout];
+    download: [TDownload];
+    jumbotron: [TJumbotron];
 }
 
-const Home = ({ jumbotron, about }: IHomeProps) => {
-  console.log(about);
+const Home = ({ about, download, jumbotron }: IHomeProps) => {
+  
   return (
     <div className={`relative`}>
       <Head>
@@ -23,6 +24,7 @@ const Home = ({ jumbotron, about }: IHomeProps) => {
       <Hero jumbotron={jumbotron}/>
       <Steps />
       <Aboutus about={about}/>
+      <Download download={download}/>
       <Footer />
     </div>
   )
@@ -46,11 +48,21 @@ export const getServerSideProps =async () => {
       image
     }
   `
+
+  const downloadQuery = `
+    *[_type == 'download']{
+      tag,
+      title,
+      image
+    }
+  `
   const jumbotron = await sanityClient.fetch(jumbotronQuery);
   const about = await sanityClient.fetch(aboutQuery);
+  const download = await sanityClient.fetch(downloadQuery);
   return {
     props: {
       about,
+      download,
       jumbotron
     }
   }

@@ -1,6 +1,7 @@
 type TTitleProps = {
     text: string;
-    className?: string
+    className?: string;
+    textColor?: string;
 }
 
 export const Title = ({text, className}: TTitleProps) => {
@@ -17,12 +18,12 @@ export const Title = ({text, className}: TTitleProps) => {
     )
 }
 
-export const H2 = ({text, className}: TTitleProps) => {
+export const H2 = ({text, textColor, className}: TTitleProps) => {
     return(
         <h2
             className={`
                text-2xl md:text-3xl lg:text-4xl 
-                text-russian font-axi font-bold
+                ${textColor ? textColor : 'text-russian'} font-axi font-bold
                 ${className}
             `}
         >

@@ -12,7 +12,7 @@ export type TJumbotron = {
 };
 
 export type TAbout = {
-   description: string;
+    description: string;
     tag: string;
     title: string;
     image: {
@@ -23,4 +23,16 @@ export type TAbout = {
         };
     }; 
 };
+
+export type TDownload = {
+    tag: string;
+    title: string;
+    image: {
+        _type: string;
+        asset: {
+            _ref: string;
+            _type: string;
+        };
+    }; 
+}
 
