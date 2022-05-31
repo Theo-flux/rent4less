@@ -10,7 +10,12 @@ export type TAboutProps = {
 
 function Aboutus({ about }: TAboutProps) {
   return (
-    <Section>
+    <Section 
+      className={``}
+      style={{
+        background: `linear-gradient(90deg, rgba(255, 237, 231, 0) 0%, #FFEDE7 100%)`
+      }}
+    >
       <Div>
         <div className={`flex flex-col md:flex-row md:justify-between items-center`}>
             <img 
