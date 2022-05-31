@@ -36,3 +36,14 @@ export type TDownload = {
     }; 
 }
 
+export type TSales = {
+    tag: string;
+    title: string;
+    image: {
+        _type: string;
+        asset: {
+            _ref: string;
+            _type: string;
+        };
+    }; 
+}

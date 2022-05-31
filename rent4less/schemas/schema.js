@@ -6,6 +6,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import jumbotron from './jumbotron'
 import about from './about'
 import download from './download'
+import stats from './stats'
+import posts from './posts'
+import sales from './sales'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,6 +20,9 @@ export default createSchema({
     /* Your types here! */
     jumbotron,
     about,
-    download
+    download,
+    stats,
+    posts,
+    sales
   ]),
 })

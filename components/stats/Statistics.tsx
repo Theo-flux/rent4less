@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Section, Div } from '../../shared';
 
 function Statistics() {
   return (
-    <div>Statistics</div>
+    <Section>
+      <Div>
+        <div className={`grid grid-cols-2 md:grid-cols-4 gap-4`}>
+          stats
+        </div>
+      </Div>
+    </Section>
   )
 }
 

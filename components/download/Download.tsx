@@ -36,8 +36,8 @@ function Download({download}: IDownloadProps) {
                         backgroundImage: `url('${urlFor(download[0].image.asset._ref).url()}')`,
                         backgroundPosition: `cover`,
                         backgroundRepeat: `no-repeat`,
-                        backgroundBlendMode: `overlay`,
-                        backgroundColor: `#00000095`,
+                        backgroundBlendMode: `multiply`,
+                        backgroundColor: `rgba(0, 0, 0, 0.8)`
                     }}
                 >
                     <div className={`h-full p-4 md:px-12`}>

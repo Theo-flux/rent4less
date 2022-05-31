@@ -1,16 +1,17 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Navbar, Hero, Steps, Footer, Aboutus, Download } from '../components';
+import { Navbar, Hero, Steps, Footer, Aboutus, Download, Statistics, Sales } from '../components';
 import { sanityClient } from "../sanity";
-import {TJumbotron, TAbout, TDownload} from "../types/typings";
+import {TJumbotron, TAbout, TDownload, TSales} from "../types/typings";
 
 interface IHomeProps {
     about: [TAbout];
     download: [TDownload];
     jumbotron: [TJumbotron];
+    sales: [TSales];
 }
 
-const Home = ({ about, download, jumbotron }: IHomeProps) => {
+const Home = ({ about, download, jumbotron, sales }: IHomeProps) => {
   
   return (
     <div className={`relative`}>
@@ -23,7 +24,9 @@ const Home = ({ about, download, jumbotron }: IHomeProps) => {
       <Navbar />
       <Hero jumbotron={jumbotron}/>
       <Steps />
+      <Sales sales={sales}/>
       <Aboutus about={about}/>
+      <Statistics/>
       <Download download={download}/>
       <Footer />
     </div>
@@ -56,14 +59,25 @@ export const getServerSideProps =async () => {
       image
     }
   `
+
+  const salesQuery = `
+    *[_type == 'sales']{
+      tag,
+      title,
+      image
+    }
+  `
   const jumbotron = await sanityClient.fetch(jumbotronQuery);
   const about = await sanityClient.fetch(aboutQuery);
   const download = await sanityClient.fetch(downloadQuery);
+  const sales = await sanityClient.fetch(salesQuery);
+  
   return {
     props: {
       about,
       download,
-      jumbotron
+      jumbotron,
+      sales
     }
   }
 }
