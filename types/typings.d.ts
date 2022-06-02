@@ -47,3 +47,15 @@ export type TSales = {
         };
     }; 
 }
+
+export type TStats = {
+    tag: string;
+    figure: number;
+    image: {
+        _type: string;
+        asset: {
+            _ref: string;
+            _type: string;
+        };
+    };
+}
