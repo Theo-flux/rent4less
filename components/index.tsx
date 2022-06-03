@@ -6,3 +6,4 @@ export { default as Statistics } from "./stats/Statistics";
 export { default as Aboutus } from "./about/Aboutus";
 export { default as Download } from "./download/Download";
 export { default as Sales } from "./sales/Sales";
+export { default as Testimony } from "./testimony/Testimony.jsx";

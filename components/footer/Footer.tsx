@@ -6,7 +6,7 @@ import logo from '../../public/rent4less-logo.png'
 
 function Footer() {
   return (
-    <Section className={`px-4 py-24`}>
+    <Section className={`px-4 py-24`} style={{background: `linear-gradient(90deg, rgba(255, 237, 231, 0) 0%, #FFEDE7 100%)`}}>
         <div className={`bg-[#000000] rounded-md`}>
             <div className={`p-4 md:p-8`}>
                 <div className={`grid grid-cols-1 md:grid-cols-4 gap-8`}>

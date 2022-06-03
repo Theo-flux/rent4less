@@ -27,7 +27,7 @@ const StatPod = ({stat}: IStatsPodprops) => {
 }
 
 function Statistics({stats}: IStatsprops) {
-  console.log(stats)
+
   return (
     <Section>
       <Div>

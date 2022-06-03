@@ -1,18 +1,19 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Navbar, Hero, Steps, Footer, Aboutus, Download, Statistics, Sales } from '../components';
+import { Navbar, Hero, Steps, Footer, Aboutus, Download, Statistics, Sales, Testimony } from '../components';
 import { sanityClient } from "../sanity";
-import {TJumbotron, TAbout, TDownload, TSales, TStats} from "../types/typings";
+import {TJumbotron, TAbout, TDownload, TSales, TStats, TTestimony} from "../types/typings";
 
 interface IHomeProps {
     about: [TAbout];
     download: [TDownload];
     jumbotron: [TJumbotron];
     sales: [TSales];
-    stats: [TStats]
+    stats: [TStats];
+    testimony: [TTestimony]
 }
 
-const Home = ({ about, download, jumbotron, sales, stats }: IHomeProps) => {
+const Home = ({ about, download, jumbotron, sales, stats, testimony }: IHomeProps) => {
   
   return (
     <div className={`relative`}>
@@ -29,10 +30,13 @@ const Home = ({ about, download, jumbotron, sales, stats }: IHomeProps) => {
       <Aboutus about={about}/>
       <Statistics stats={stats}/>
       <Download download={download}/>
+      <Testimony testimony={testimony} />
       <Footer />
     </div>
   )
 }
+
+
 
 export const getServerSideProps =async () => {
   const jumbotronQuery = `
@@ -76,11 +80,22 @@ export const getServerSideProps =async () => {
       image
     }
   `
+
+  const testimonyQuery = `
+    *[_type == 'testimony']{
+      image,
+      name,
+      role,
+      description
+    }
+  `
+
   const jumbotron = await sanityClient.fetch(jumbotronQuery);
   const about = await sanityClient.fetch(aboutQuery);
   const download = await sanityClient.fetch(downloadQuery);
   const sales = await sanityClient.fetch(salesQuery);
   const stats = await sanityClient.fetch(statsQuery);
+  const testimony = await sanityClient.fetch(testimonyQuery);
 
   return {
     props: {
@@ -88,7 +103,8 @@ export const getServerSideProps =async () => {
       download,
       jumbotron,
       sales,
-      stats
+      stats,
+      testimony
     }
   }
 }
