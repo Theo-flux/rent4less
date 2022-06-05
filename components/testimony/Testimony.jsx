@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { urlFor } from '../../sanity';
 import { Div, Section } from '../../shared';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Ally } from 'swiper';
+import { Navigation } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -46,7 +46,7 @@ function Testimony({testimony}) {
                     <Swiper
                         className={``}
                         slideToClickedSlide={true}
-                        modules={[Navigation, Ally]}
+                        modules={[Navigation]}
                         spaceBetween={50}
                         slidesPerView={1}
                         navigation={{

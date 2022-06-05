@@ -28,7 +28,7 @@ const SalesCard = ({sale}: TSalesCardProps) => {
             <div className={`p-8`}>
                 <h4 className={`text-white font-quinta font-semibold text-xl max-w-[200px]`}>{title}</h4>
 
-                <div className={`flex justify-between items-center w-fit mt-4 md:mt-8`}>
+                <div className={`animation-bounce flex justify-between items-center w-fit mt-4 md:mt-8`}>
                     <i className={`text-xl text-flamingo ri-arrow-right-circle-fill`}></i>
                     <p className={`text-white ml-2`}>{tag}</p>
                 </div>
