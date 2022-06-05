@@ -38,7 +38,7 @@ const Home = ({ about, download, jumbotron, sales, stats, testimony }: IHomeProp
 
 
 
-export const getServerSideProps =async () => {
+export const getServerSideProps = async() => {
   const jumbotronQuery = `
     *[_type == 'jumbotron']{
       tag,
