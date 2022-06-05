@@ -89,7 +89,7 @@ function Testimony({testimony}) {
                         }
                     </Swiper>
 
-                    <div className={`w-fit flex justify-between items-center absolute bottom-0 right-[37%] z-40`}>
+                    <div className={`w-fit flex justify-between items-center absolute bottom-[-30px] md:bottom-0 right-[37%] z-40`}>
                         <PrevBtn
                             ref={prevRef}
                             className="group hover:bg-[#000000]"
