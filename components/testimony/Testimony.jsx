@@ -75,7 +75,8 @@ function Testimony({testimony}) {
 
                                             <div className={`w-full md:w-[45%]`}>
                                                 <div>
-                                                    <h1 className={`text-sm md:text-base`}>
+                                                    <h1 className={`text-sm md:text-md font-quinta
+                                                    text-darkgray font-light tracking-wider`}>
                                                         <span className={`text-5xl md:text-7xl font-poppins text-darkgray flex justify-end items-end rotate-180 w-fit mb-2`}>{`"`}</span>
                                                         {test.description}.
                                                         <span className={`text-5xl md:text-7xl font-poppins text-darkgray flex justify-end mt-2`}>{`"`}</span>
