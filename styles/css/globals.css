@@ -22,6 +22,22 @@ body {
     background-color: #FFFBFA;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-flamingo);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-mantis);
+}
+
 .stroked-text-01 {
     text-shadow:
         -2px -2px 0 #ffffff,
@@ -91,7 +107,7 @@ body {
 @keyframes bounce {
     0%,
     100% {
-        transform: translateX(25%);
+        transform: translateX(2%);
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
     }
 
