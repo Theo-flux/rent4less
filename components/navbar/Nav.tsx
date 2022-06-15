@@ -17,24 +17,28 @@ const navItems = [
     {
         id: 0,
         name: "About us",
+        href: "#about",
         isDropdown: false,
     },
 
     {
         id: 1,
         name: "Property",
+        href: "#property",
         isDropdown: true,
     },
     
     {
         id: 2,
         name: "FAQs",
+        href: "#faq",
         isDropdown: false,
     },
     
     {
         id: 3,
         name: "Landlord",
+        href: "#landlord",
         isDropdown: false,
     } 
 ];
@@ -46,16 +50,17 @@ const NavDesktop = () => {
                 {
                     navItems.map((el, index) => {
                         return(
-                            <span 
+                            <a 
                                 key={index}
                                 className={`
                                     text-sm cursor-pointer text-darkgray
                                     hover:text-flamingo transition-all 
                                     duration-500 ease-in-out
                                 `}
+                                href={el.href}
                             >
                                 {el.name}
-                            </span>
+                            </a>
                         )
                     })
                 }
@@ -83,16 +88,17 @@ const NavMobile = ({toggler, className}: TNavMobileProps) => {
                 {
                     navItems.map((el, index) => {
                         return(
-                            <span 
+                            <a
                                 key={index}
                                 className={`
                                     text-sm cursor-pointer text-darkgray
                                     hover:text-flamingo transition-all 
                                     duration-500 ease-in-out mb-8
                                 `}
+                                href={el.href}
                             >
                                 {el.name}
-                            </span>
+                            </a>
                         )
                     })
                 }

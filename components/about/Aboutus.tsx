@@ -11,6 +11,7 @@ export type TAboutProps = {
 function Aboutus({ about }: TAboutProps) {
   return (
     <Section 
+      id={`about`}
       className={``}
       style={{
         background: `linear-gradient(90deg, rgba(255, 237, 231, 0) 0%, #FFEDE7 100%)`

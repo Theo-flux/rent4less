@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
+
 import Head from 'next/head'
-import { Navbar, Hero, Steps, Footer, Aboutus, Download, Statistics, Sales, Testimony } from '../components';
+import { Navbar, Hero, Steps, Footer, Aboutus, Download, Statistics, Sales, Testimony, Property } from '../components';
 import { sanityClient } from "../sanity";
-import {TJumbotron, TAbout, TDownload, TSales, TStats, TTestimony} from "../types/typings";
+import { TJumbotron, TAbout, TDownload, TSales, TStats, TTestimony, TProperty } from "../types/typings";
 
 interface IHomeProps {
     about: [TAbout];
@@ -10,10 +11,19 @@ interface IHomeProps {
     jumbotron: [TJumbotron];
     sales: [TSales];
     stats: [TStats];
-    testimony: [TTestimony]
+    testimony: [TTestimony];
+    property: [TProperty];
 }
 
-const Home = ({ about, download, jumbotron, sales, stats, testimony }: IHomeProps) => {
+const Home = ({ 
+  about, 
+  download, 
+  jumbotron, 
+  sales, 
+  stats, 
+  testimony,
+  property
+}: IHomeProps) => {
   
   return (
     <div className={`relative`}>
@@ -21,11 +31,11 @@ const Home = ({ about, download, jumbotron, sales, stats, testimony }: IHomeProp
         <title>Rent4less</title>
         <meta name="description" content="rent4less website" />
         <link rel="icon" href="/favicon.png" />
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet"></link>
       </Head>
       <Navbar />
       <Hero jumbotron={jumbotron}/>
       <Steps />
+      <Property property={property} />
       <Sales sales={sales}/>
       <Aboutus about={about}/>
       <Statistics stats={stats}/>
@@ -35,7 +45,6 @@ const Home = ({ about, download, jumbotron, sales, stats, testimony }: IHomeProp
     </div>
   )
 }
-
 
 
 export const getServerSideProps = async() => {
@@ -90,12 +99,23 @@ export const getServerSideProps = async() => {
     }
   `
 
+  const propertyQuery = `
+    *[_type == 'property']{
+      availability,
+      image,
+      title,
+      location,
+      price
+    }
+  `
+
   const jumbotron = await sanityClient.fetch(jumbotronQuery);
   const about = await sanityClient.fetch(aboutQuery);
   const download = await sanityClient.fetch(downloadQuery);
   const sales = await sanityClient.fetch(salesQuery);
   const stats = await sanityClient.fetch(statsQuery);
   const testimony = await sanityClient.fetch(testimonyQuery);
+  const property = await sanityClient.fetch(propertyQuery);
 
   return {
     props: {
@@ -104,7 +124,8 @@ export const getServerSideProps = async() => {
       jumbotron,
       sales,
       stats,
-      testimony
+      testimony,
+      property
     }
   }
 }

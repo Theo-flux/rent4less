@@ -3,6 +3,7 @@ import React from "react";
 type TGeneralProps = {
     children: React.ReactNode;
     className?: string;
+    id?: string;
     style?: React.CSSProperties;
 };
 
@@ -13,9 +14,9 @@ type TButtonProps = {
     onClick?: () => void;
 };
 
-export const Section = ({ children, className, style}: TGeneralProps) => {
+export const Section = ({ children, className, style, id}: TGeneralProps) => {
     return(
-        <section style={style || {}} className={` ${className}`}>
+        <section id={id} style={style || {}} className={` ${className}`}>
             {children}
         </section>
     )

@@ -10,6 +10,7 @@ import stats from './stats'
 import posts from './posts'
 import sales from './sales'
 import testimony from './testimony'
+import property from './property'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,6 +26,7 @@ export default createSchema({
     stats,
     posts,
     sales,
-    testimony
+    testimony,
+    property
   ]),
 })

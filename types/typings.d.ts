@@ -72,3 +72,17 @@ export type TTestimony = {
     role: string;
     description: string;
 }
+
+export type TProperty = {
+    image: {
+        _type: string;
+        asset: {
+            _ref: string;
+            _type: string;
+        };
+    };
+    title: string;
+    location: string;
+    price: number;
+    availability: string;
+}
